@@ -7,3 +7,11 @@
 5. nginx.exe 실행 (C://nginx/nginx.exe)
 6. docker-compose up
 7. artillery test 
+
+--------
+하나의 app1만 수정하고 배포하는 방법
+1. app1 수정
+2. docker-compose build app1
+3. docker-compose up -d --no-deps --force-recreate app1
+4. docker-compose ps
+5. docker-compose logs app1
