@@ -2,38 +2,38 @@ version: '3'
 services:
   app1:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8081:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app2:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8082:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app3:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8083:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app4:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8084:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app5:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8085:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app6:
     image: clusterapp:latest
-    expose:
-      - "8080"
+    ports:
+      - "8086:8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
 
   nginx:
@@ -49,4 +49,3 @@ services:
       - app4
       - app5
       - app6
-    restart: always
