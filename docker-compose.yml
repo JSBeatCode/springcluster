@@ -1,37 +1,38 @@
+# cluster app 접속 외부 노춡x, 오직 nginx를 통해서만
 version: '3'
 services:
   app1:
-    image: clusterapp:latest
+    image: clusterapp:2.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app2:
-    image: clusterapp:latest
+    image: clusterapp:2.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app3:
-    image: clusterapp:latest
+    image: clusterapp:1.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app4:
-    image: clusterapp:latest
+    image: clusterapp:1.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app5:
-    image: clusterapp:latest
+    image: clusterapp:2.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작
     
   app6:
-    image: clusterapp:latest
+    image: clusterapp:1.0
     expose:
       - "8080"
     restart: always  # 컨테이너가 중지되면 항상 다시 시작

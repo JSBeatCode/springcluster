@@ -1,3 +1,4 @@
+# cluster app 접속 외부 노춡x, 오직 nginx를 통해서만
 version: '3'
 services:
   app1:
