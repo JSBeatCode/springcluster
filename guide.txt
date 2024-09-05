@@ -1,0 +1,9 @@
+1. install docker spring java maven nginx(C://nginx) git 
+2. create spring app and do coding
+3. Dockerfile
+4. docker build -t clusterapp .
+5. docker-compose.yml coding
+4. nginx.conf 수정 (C://nginx/conf/nginx.conf)
+5. nginx.exe 실행 (C://nginx/nginx.exe)
+6. docker-compose up
+7. artillery test 
