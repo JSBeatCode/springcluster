@@ -7,18 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//@RestController // if it is for only backend service
-@Controller // if it is for showing thymleaf ui 
+// @RestController // Uncomment this annotation if the controller is only for a backend service (e.g., returning JSON).
+@Controller // Use this annotation if the controller is serving a Thymeleaf UI (for rendering HTML pages).
 public class HelloController {
-    @GetMapping("/")
+
+    @GetMapping("/")  // Map HTTP GET requests for the root URL ("/") to this method.
     public String hello(Model model) {
-        // 현재 시간 가져오기
+        // Get the current time
         LocalDateTime currentTime = LocalDateTime.now();
         
-        // 기본 형식으로 출력
-        System.out.println("2.0 현재 시간: " + currentTime);
+        // Print the current time in the default format to the console
+        System.out.println("2.0 Current time: " + currentTime);
 
-//        return "2.0 Hello, Kubernetes! " + currentTime;
-        return "index";
+//      return "2.0 Hello, Kubernetes! " + currentTime;  // Uncomment this to return a plain text response with a message and the current time.
+        return "index";  // Return the name of the Thymeleaf template (index.html) to be rendered.
     }
 }

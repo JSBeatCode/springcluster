@@ -1,53 +1,53 @@
-# cluster app 접속 외부 노춡x, 오직 nginx를 통해서만
+# External access to cluster app is restricted; only accessible through Nginx
 version: '3'
 services:
   app1:
-    image: clusterapp:blue
+    image: clusterapp:blue  # Docker image for app1 (blue version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
-    
+      - "8080"  # Expose port 8080 within the service network (not to the host)
+    restart: always  # Always restart the container if it stops
+
   app2:
-    image: clusterapp:blue
+    image: clusterapp:blue  # Docker image for app2 (blue version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
+      - "8080"  # Expose port 8080 within the service network
+    restart: always  # Always restart the container if it stops
     
   app3:
-    image: clusterapp:green
+    image: clusterapp:green  # Docker image for app3 (green version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
+      - "8080"  # Expose port 8080 within the service network
+    restart: always  # Always restart the container if it stops
     
   app4:
-    image: clusterapp:blue
+    image: clusterapp:blue  # Docker image for app4 (blue version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
+      - "8080"  # Expose port 8080 within the service network
+    restart: always  # Always restart the container if it stops
     
   app5:
-    image: clusterapp:green
+    image: clusterapp:green  # Docker image for app5 (green version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
+      - "8080"  # Expose port 8080 within the service network
+    restart: always  # Always restart the container if it stops
     
   app6:
-    image: clusterapp:green
+    image: clusterapp:green  # Docker image for app6 (green version)
     expose:
-      - "8080"
-    restart: always  # 컨테이너가 중지되면 항상 다시 시작
+      - "8080"  # Expose port 8080 within the service network
+    restart: always  # Always restart the container if it stops
 
   nginx:
-    image: nginx:latest
+    image: nginx:latest  # Use the latest official Nginx image
     ports:
-      - "8888:8888"  # 호스트의 8888 포트를 컨테이너의 8888 포트와 매핑
+      - "8888:8888"  # Map host's port 8888 to the container's port 8888
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Mount the local Nginx configuration file to the container
     depends_on:
-      - app1
-      - app2
-      - app3
-      - app4
-      - app5
-      - app6
-    restart: always
+      - app1  # Nginx will wait for app1 to start before starting itself
+      - app2  # Nginx will wait for app2 to start before starting itself
+      - app3  # Nginx will wait for app3 to start before starting itself
+      - app4  # Nginx will wait for app4 to start before starting itself
+      - app5  # Nginx will wait for app5 to start before starting itself
+      - app6  # Nginx will wait for app6 to start before starting itself
+    restart: always  # Always restart the container if it stops
