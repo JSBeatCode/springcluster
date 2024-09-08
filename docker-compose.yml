@@ -38,7 +38,7 @@ services:
     restart: always  # Always restart the container if it stops
 
   nginx:
-    image: nginx:latest  # Use the latest official Nginx image
+    image: nginx:1.26.1  # Use the latest official Nginx image
     ports:
       - "8888:8888"  # Map host's port 8888 to the container's port 8888
     volumes:
