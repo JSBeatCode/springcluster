@@ -3,8 +3,9 @@
 3. Dockerfile
 4. docker build -t clusterapp .
 5. docker-compose.yml coding
-4. nginx.conf 수정 (C://nginx/conf/nginx.conf)
-5. nginx.exe 실행 (C://nginx/nginx.exe)
+#4. nginx.conf 수정 (C://nginx/conf/nginx.conf)
+#5. nginx.exe 실행 (C://nginx/nginx.exe)
+4. nginx.conf 코딩
 6. docker-compose up
 7. artillery test 
 
